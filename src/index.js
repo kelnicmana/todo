@@ -1,9 +1,10 @@
 import { format } from 'date-fns';
 import _ from 'lodash';
 import bootstrap from 'bootstrap';
+import uiFunctions from './ui'
 
-// const date = new Date();
-// const dateFormat = format(date, 'MM/dd/yyyy');
+const date = new Date();
+const dateFormat = format(date, 'MM/dd/yyyy');
 
 // function component() {
 //     const element = document.createElement('div');
@@ -22,5 +23,5 @@ class toDo {
     }
 }
 
-let ex = new toDo('Shopping', 'Go shopping', 'tomorrow', 'high');
+let ex = new toDo('Shopping', 'Go shopping', dateFormat, 'high');
 console.log(ex);
