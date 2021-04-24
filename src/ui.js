@@ -1,18 +1,10 @@
-function togglePopUp() {
-    if (document.querySelector('#popUp').classList.contains("show")) {
-        document.querySelector('#popUp').classList.remove("show");
+document.querySelector('.navSvg').addEventListener('click', function() {
+    if (document.querySelector('.left').classList.contains('hidden')) {
+        document.querySelector('.left').classList.remove('hidden');
     }
     else {
-        document.querySelector('#popUp').classList.add("show");
+        document.querySelector('.left').classList.add('hidden');
     }
-}
-
-document.querySelector('#openPopUp').addEventListener('click', () => {
-    togglePopUp();
-});
-
-document.querySelector('#closePopUp').addEventListener('click', () => {
-    togglePopUp();
 });
 
 export default uiFunctions

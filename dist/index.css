@@ -10,36 +10,38 @@ p {
 
 div.wrapper {
   display: grid;
-  grid-template-columns: 16rem auto;
+  grid-template-columns: 1fr;
   grid-template-rows: 50px calc(100vh - 80px) 30px;
 }
 
 nav {
-  background-color: rgba(50,50,50,1);
-  border-bottom: 1px solid rgba(0,0,0,1);
   padding: 10px;
   font-weight: 600;
-  grid-column: 1 / 3;
   grid-row: 1 / 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+div.leftright {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: row;
+}
+
 div.left {
   background-color: #E5E7EB;
   border-right: 1px solid #D1D5DB;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
   padding: 10px;
+  width: 25vw;
 }
 
 div.mainWrapper {
-  grid-column: 2 / 3;
-  grid-row: 2 / 3;
   overflow: auto;
   background-color: #F3F4F6;
   padding: 10px;
+  width: 75vw;
 }
 
 #title {
@@ -60,28 +62,59 @@ footer {
   grid-row: 3 / 4;
 }
 
-.center {
-    visibility: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
-.card-header {
-    display: flex;
-    justify-content: space-between;
-}
-
 div.show {
     visibility: visible;
     animation: scale 0.5s;
 }
 
+.navSvg {
+    visibility: hidden;
+}
+
 @keyframes scale {
     0% {transform: scale(0);}
     100% {transform: scale(1)} 
+}
+
+@media only screen and (max-width: 650px)  {
+    .navSvg {
+        visibility: visible;
+    }
+    div.wrapper {
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 100vw;
+        grid-template-rows: 50px auto 30px;
+      }
+    
+    nav {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    div.leftright {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+      flex-direction: column;
+    }
+
+    div.left {
+        display: fixed;
+        width: 100vw;
+        border-bottom: 1px solid rgba(150,150,150,1);
+        overflow: scroll;
+    }
+
+    div.hidden {
+      display: none;
+    }
+
+    div.mainWrapper {
+      width: 100vw;
+    }
+
+    footer {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
 }
