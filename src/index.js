@@ -1,7 +1,10 @@
+'use strict';
+
 import { format } from 'date-fns';
 import _ from 'lodash';
 import bootstrap from 'bootstrap';
 import uiFunctions from './ui'
+
 
 const date = new Date();
 const dateFormat = format(date, 'MM/dd/yyyy');
