@@ -62,18 +62,21 @@ footer {
   grid-row: 3 / 4;
 }
 
-div.show {
-    visibility: visible;
-    animation: scale 0.5s;
-}
-
 .navSvg {
     visibility: hidden;
 }
 
-@keyframes scale {
-    0% {transform: scale(0);}
-    100% {transform: scale(1)} 
+i.fa-check-square, i.fa-square {
+  margin-right: 1rem;
+}
+
+button.list-group-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+i.fa-check-square, i.fa-square, i.fa-trash-alt {
+  font-size: 1.25rem;
 }
 
 @media only screen and (max-width: 650px)  {
@@ -103,11 +106,19 @@ div.show {
         width: 100vw;
         border-bottom: 1px solid rgba(150,150,150,1);
         overflow: scroll;
+        display: none;
     }
 
-    div.hidden {
-      display: none;
-    }
+    div.show {
+      display: block;
+      transform-origin: top;
+      animation: newName 0.5s ease-out;
+  }
+  
+  @keyframes newName {
+    0% {transform: scaleY(0);}
+    100% {transform: scaleY(1);} 
+  }
 
     div.mainWrapper {
       width: 100vw;
