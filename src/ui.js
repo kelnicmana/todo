@@ -4,11 +4,11 @@
 const uiFunctions = (
     function () {
         document.querySelector('.navSvg').addEventListener('click', function() {
-            if (document.querySelector('.left').classList.contains('show')) {
-                document.querySelector('.left').classList.remove('show');
+            if (document.querySelector('.left').classList.contains('show2')) {
+                document.querySelector('.left').classList.remove('show2');
             }
             else {
-                document.querySelector('.left').classList.add('show');
+                document.querySelector('.left').classList.add('show2');
             }
         })
 
@@ -31,5 +31,16 @@ const uiFunctions = (
 )()
 
 // function to add new task to current list
+function addTask(title) {
+    const taskList = document.querySelector('.taskList');
+    const taskButton = document.createElement('button');
+    taskButton.classList.add('list-group-item','list-group-item-action','tasks');
+    taskButton.innerHTML = `
+    <div><i class="far fa-square"></i> ${title}</div><i class="far fa-trash-alt"></i>
+    `;
+    taskList.appendChild(taskButton);
+    console.log('working');
+}
 
-export default uiFunctions
+
+export { uiFunctions, addTask }
