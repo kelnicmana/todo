@@ -22,16 +22,18 @@
             <div class="leftright">
             <div class="left">
                 <div class="list-group">
-                    <button type="button" class="list-group-item list-group-item-action">Groceries</button>
-                    <button type="button" class="list-group-item list-group-item-action">Workout</button>
-                    <button type="button" class="list-group-item list-group-item-action">Cleaning</button>
-                    <button type="button" class="list-group-item list-group-item-action">Programming goals</button>
+                    <button type="button" class="list-group-item list-group-item-action">Groceries<i class="far fa-trash-alt"></i></button>
+                    <button type="button" class="list-group-item list-group-item-action">Workout<i class="far fa-trash-alt"></i></button>
+                    <button type="button" class="list-group-item list-group-item-action">Cleaning<i class="far fa-trash-alt"></i></button>
+                    <button type="button" class="list-group-item list-group-item-action">Programming goals<i class="far fa-trash-alt"></i></button>
                 </div>
                 
                 <!-- Button trigger modal -->
-                <button type="button" id="addList" class="btn btn-secondary my-1 w-100" data-bs-toggle="modal" data-bs-target="#exModal">
-                    + New List
-                </button>
+                <div class="d-grid gap-2 col-md-12 col-6 mx-auto">
+                    <button type="button" id="addList" class="btn btn-secondary my-1 w-100" data-bs-toggle="modal" data-bs-target="#exModal">
+                        + New List
+                    </button>
+                </div>
             
                 <!-- Modal -->
                 <div class="modal fade" id="exModal" tabindex="-1" aria-labelledby="exModalLabel" aria-hidden="true">
@@ -42,7 +44,7 @@
                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form id="book-form">
+                            <form id="list-form">
                                 <div class="mb-3">
                                     <label for="title" class="form-label">List Name</label>
                                     <input class="form-control title" type="text"></input>
@@ -90,30 +92,31 @@
                     <div class="modal-content">
                       <div class="modal-header bg-light">
                         <h5 class="modal-title" id="exampleModalLabel">Create New Task</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" id="modalTaskClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                          <form id="book-form">
+                          <form id="task-form">
                               <div class="mb-3">
                                   <label for="title" class="form-label">Task Name</label>
-                                  <input class="form-control title" type="text"></input>
+                                  <input class="form-control task-title" type="text"></input>
                               </div>
                               <div class="mb-3">
                                   <label for="desc" class="form-label">Description (optional)</label>
-                                  <textarea class="form-control desc" rows="3"></textarea>
+                                  <textarea class="form-control task-desc" rows="3"></textarea>
+                              </div>
+                              <div class="mb-3">
+                                  <label for="date" class="form-label">Due Date (Optional)</label>
+                                  <input type="date" class="form-control task-date">
                               </div>
                               <div class="mb-3">
                                   <label for="status" class="form-label">Priority</label>
-                                  <select class="form-select status" id="status">
+                                  <select class="form-select task-status" id="status">
                                       <option value="0">Normal</option>
                                       <option value="1">High</option>
                                   </select>
                               </div>
+                              <button type="button" class="btn btn-secondary" id="submitTask">Add Task</button>
                           </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-secondary">Add Task</button>
                       </div>
                     </div>
                   </div>

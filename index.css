@@ -39,7 +39,6 @@ div.left {
 
 div.mainWrapper {
   overflow: auto;
-  background-color: #F3F4F6;
   padding: 10px;
   width: 75vw;
 }
@@ -79,7 +78,7 @@ i.fa-check-square, i.fa-square, i.fa-trash-alt {
   font-size: 1.25rem;
 }
 
-@media only screen and (max-width: 650px)  {
+@media only screen and (max-width: 768px)  {
     .navSvg {
         visibility: visible;
     }
@@ -104,15 +103,15 @@ i.fa-check-square, i.fa-square, i.fa-trash-alt {
     div.left {
         display: fixed;
         width: 100vw;
-        border-bottom: 1px solid rgba(150,150,150,1);
+        border-bottom: 1px solid rgba(180,180,180,1);
         overflow: scroll;
         display: none;
     }
 
-    div.show {
+    div.show2 {
       display: block;
       transform-origin: top;
-      animation: newName 0.5s ease-out;
+      animation: newName 0.5s ease-in-out;
   }
   
   @keyframes newName {
