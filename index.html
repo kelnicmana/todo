@@ -95,7 +95,7 @@
                         <button type="button" id="modalTaskClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                          <form id="task-form">
+                          <form id="task-form" onsubmit="return false">
                               <div class="mb-3">
                                   <label for="title" class="form-label">Task Name</label>
                                   <input class="form-control task-title" type="text"></input>
@@ -115,7 +115,7 @@
                                       <option value="1">High</option>
                                   </select>
                               </div>
-                              <button type="button" class="btn btn-secondary" id="submitTask">Add Task</button>
+                              <button type="button" class="btn btn-secondary w-100" id="submitTask">Add Task</button>
                           </form>
                       </div>
                     </div>
